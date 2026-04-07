@@ -1,3 +1,1 @@
-- name: Print Hello
-  ansible.builtin.debug:
-    msg: Hello
+a: 500
