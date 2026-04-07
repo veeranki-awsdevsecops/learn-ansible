@@ -8,3 +8,9 @@
       ansible.builtin.debug:
         msg: a - {{ a }}
 
+    - name: Declare variable in task level
+      vars:
+        a: 200
+      ansible.builtin.debug:
+        msg: a - {{ a }}
+
