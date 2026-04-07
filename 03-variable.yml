@@ -8,11 +8,12 @@
   connection: local
   vars:
     a: 100
+  roles:
+    - sample
   tasks:
     - name: Print variable
       ansible.builtin.debug:
         msg: a - {{ a }}
-
     - name: Declare variable in task level
       vars:
         a: 200
