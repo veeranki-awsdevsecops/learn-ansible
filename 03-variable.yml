@@ -1,6 +1,7 @@
 # variable precedence
 # CLI Level
 # Task Level
+# Role Level
 # Play Level
 
 - name: Demo Variable
