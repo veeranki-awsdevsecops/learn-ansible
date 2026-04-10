@@ -21,3 +21,9 @@
       ansible.builtin.debug:
         msg: a - {{ a }}
 
+    - name: Variable from Inventory
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
+
+
+
