@@ -3,6 +3,9 @@
 # Task Level
 # Role Level
 # Play Level
+# hosts_vars
+# Inventory Level
+# groups_vars
 
 - name: Demo Variable
   hosts: localhost
@@ -27,6 +30,41 @@
      - name: Variable from Inventory
        ansible.builtin.debug:
         msg: URL - {{ URL }}
+
+- name: Facts demo1
+  hosts: all
+  tasks:
+    - name: Print a fact
+      ansible.builtin.debug:
+        msg: ansible_architecture - {{ ansible_architecture }}
+
+- name: Register Results
+  hosts: localhost
+  connection: local
+  tasks:
+      - name: Get uptime
+        ansible.builtin.shell: uptime
+        register: out
+
+      - name: Print out
+        ansible.builtin.debug:
+          msg: print register demo - "{{ out.stdout }}"
+
+- name: variable Data types
+  hosts: localhost
+  connection: local
+  vars:
+    my_string: abc
+    my_number: 123
+    my_boolean: True
+    my_boolean2: Yes
+
+  tasks:
+    - name: Print
+      ansibel.builtin.debug:
+        msg: "String - {{ my_string }}"
+
+
 
 
 
